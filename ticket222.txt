@@ -1,0 +1,57 @@
+   <div class="ConfirmacionCompra">
+      
+            <div class="encabezado_ticket">
+              <img class="img_log" src="imagenes/imagen/Logotipo.jpg">
+            
+              <h2>Floreria Michi´s
+                <br>
+                <p>Av. Del Norte #12 Col.Centro 
+                  <br>
+                  C.P.42970 Atitalaquia Hidalgo
+                </p>
+              </h2>
+            </div>
+            <center>
+              <hr class="borde_linea">
+              <h2>¡Gracias por su compra!</h2>
+              <img src="imagenes/Iconos/check-green.gif" width="90" height="90">
+         
+           <hr class="borde_linea">
+            <p>Total de la compra:</p>
+            <p>$800.00</p>
+            <p>Para dudas y aclaraciones comunícate al:</p>
+            <a class="inftic" href="#"><p>Correo:floreriaMichisOf@hotmail.com</p></a>
+            <a class="inftic" href="#"><p>Telefono: 773-123-50-33</p></a>
+            <h3>Fecha:</h3>
+            <div class="reloj">
+              <p class="fecha"></p>
+              <p class="tiempo"></p>
+              <style>
+                .borde_linea{
+                  height: 4px;
+                  background-color: black;
+                }
+              </style>
+                       <hr class="borde_linea">
+          </div>
+             <p>¡Gracias por su preferencia!</p>
+            </center>
+         
+       
+          <br>
+          <br>
+           <!--Generar codigo de barras-->
+           <div style='text-align: center;'>
+            <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+            <img alt='Barcode Generator TEC-IT'
+                 src='https://barcode.tec-it.com/barcode.ashx?data=1794873838790309&translate-esc=on'/>
+          </div>
+          <div style='padding-top:8px; text-align:center; font-size:15px; font-family: Source Sans Pro, Arial, sans-serif;'>
+            <!-- back-linking to www.tec-it.com is required -->
+            <a href='https://www.tec-it.com' title='Barcode Software by TEC-IT' target='_blank'>
+           
+            </a>
+          </div>
+
+        
+        </div>

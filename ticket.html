@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket de Compra</title>
+    
+    <style>
+        .ControldeCssdeTiket{
+            text-align: center;
+        }
+        .tamañoLinea{
+            position: relative;
+            bottom: 20px;
+        }
+        .moverParaArriba{
+            position: relative;
+            bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="ControldeCssdeTiket" id="ticketContent">
+    <h2>FLORERÍA MICHI´S </h2>
+    <h4>Ignacio Altamirano No. 11, Atitalaquia, Hidalgo.</h4>
+    <h2 class="tamañoLinea">--------------------------------------------------</h2>
+    <div class="moverParaArriba">
+    <p>Fecha: <span id="fecha"></span></p>
+    <p>Hora: <span id="hora"></span></p>
+    <p>Número de Ticket: <span id="numeroTicket"></span><br>----------------------------------------</p>
+    <p>Productos:</p>
+     <p id="ticketCarrito"></p> 
+     <form action="main.js">
+        <script src="main.js">
+         function calcula_resta() {
+         var total = document.getElementById("price-total").value;
+        document.getElementById('price-total').innerHTML = total;
+           }
+
+        </script>
+       <p>Total:</p>
+    </span><br>----------------------------------------</p>
+     </form>
+    <h5>Gracias por su Compra!!!</h5>
+    <form action="PaginaPrincipal.php"> 
+        <button type="submit">Regresar al Inicio</button>
+    </form>
+    <br>
+    <button type="button" id="downloadTicketButton">Descargar Ticket</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        var priceTotal = localStorage.getItem("totalPagar") || 0;
+
+        var ticketCarrito = document.getElementById("ticketCarrito");
+        var ticketTotalPagar = document.getElementById("ticketTotalPagar");
+        var totalArticulos = document.getElementById("totalArticulos");
+
+        // Display date and time
+        var fecha = new Date();
+        document.getElementById("fecha").textContent = fecha.toLocaleDateString();
+        document.getElementById("hora").textContent = fecha.toLocaleTimeString();
+
+        // Retrieve and increment ticket number
+        var numeroTicket = parseInt(localStorage.getItem("ultimoNumeroTicket")) || 1;
+        document.getElementById("numeroTicket").textContent = numeroTicket;
+
+        // Display cart items and total
+        var totalItems = 0;
+        carrito.forEach(function(producto) {
+            var nuevoProducto = document.createElement("li");
+            nuevoProducto.textContent = producto.nombre + " : $" + producto.precio;
+            ticketCarrito.appendChild(nuevoProducto);
+            totalItems += producto.cantidad || 1;  // Default to 1 if 'cantidad' is not present
+        });
+
+        ticketTotalPagar.textContent = totalPagar;
+        totalArticulos.textContent = totalItems;
+
+        // Increment ticket number for the next purchase
+        localStorage.setItem("ultimoNumeroTicket", numeroTicket + 1);
+
+        // Download ticket as PDF
+        document.getElementById("downloadTicketButton").addEventListener("click", function() {
+            var element = document.getElementById('ticketContent');
+            html2pdf().from(element).save('ticket.pdf');
+        });
+    });
+</script>
+
+</body>
+</html>

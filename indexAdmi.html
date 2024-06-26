@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="website icon" type="png" 
+     href="imagenes/Iconos/icons8-gato-50.png">
+    <link rel="stylesheet" href="Administrador.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <center>
+    <div class="borde_top">
+      <h2>Administrador Floreria Michi's</h2>
+    </div>
+    
+    <button class="btn"><a href="./AdmiSesion.php">VOLVER AL INICIO</a></button>
+
+
+<!----------------------------------------------------------------------------------------------------------->
+ 
+  <div class="agregar-buton">
+	<a href="RegistroAdmi.php" > <!--Para mandar o otra ventana al preciona dentro de "a" : target="_blank"-->
+		<img src="https://img.icons8.com/?size=100&id=45140&format=png&color=000000" alt="Agregar usuario">
+	</a>
+   
+<!----------------------------------------------------------------------------------------------------------->
+
+   </center>
+
+
+
+  <main class="cards">
+ 
+<!--Registro--> 
+
+    <section class="card contact">
+        <div class="icon">
+            <img src="https://img.icons8.com/?size=100&id=q6OKDrR6BxFR&format=png&color=000000" alt="Contact us.">
+            
+        </div>
+        <form action="./formulario/index.php" method="post">
+          <h3>Registros</h3>
+          <span>Datos de inicios de sesion e registros.</span>
+          <br>
+          <button type="submit">Entrar</button>
+        </form>
+
+
+    </section>
+
+<!--Compra--> 
+    <section class="card shop">
+        <div class="icon">
+            <img src="https://img.icons8.com/?size=100&id=BguJOlShBFvc&format=png&color=000000" alt="Shop here.">
+        </div>
+        <form action="./Datos de compras/tablaCompra.php" method="post">
+            <h3>Datos de compra</h3>
+        <span>Datos del formulario de compra .</span>
+        <br>
+        <button type="submit">Entrar</button> 
+          </form>
+          
+    </section>
+
+<!--Encuesta--> 
+
+    <section class="card about">
+        <div class="icon">
+            <img src="https://img.icons8.com/?size=100&id=YmJXMwIR9Ti2&format=png&color=000000" alt="About us.">
+        </div>
+        <form action="./Datos de Encuesta/index.php" method="post">
+            <h3>Encuesta</h3>
+            <span>Datos de encuesta de satisfaccion.</span>
+            <br>
+            <button type="submit">Entrar</button>           
+          </form>
+        
+     </section>
+</main>
+
+</body>
+</html>
